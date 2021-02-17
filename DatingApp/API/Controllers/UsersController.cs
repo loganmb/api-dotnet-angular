@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,7 +29,7 @@ namespace API.Controllers
         */
 
         [HttpGet]
-        public async Task <ActionResult<IEnumerable<AppUser>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
             //var users = _context.Users.ToList();
 
@@ -47,11 +49,23 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public ActionResult<IEnumerable<AppUser>> PostUser()
+        public ActionResult PostUser(AppUser newUser)
         {
-            //var users = _context.Users.ToList();
-            
-            return _context.Users.ToList();
+            // //var users = _context.Users.ToList();
+            // try
+            // {
+            //    if(await _context.AddAsync(newUser))
+            //    {
+
+            //    }
+
+            //     return BadRequest();
+            // }
+            // catch (Exception ex)
+            // {
+            //     return StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao criar usuário!: {ex.Message}");
+            // }
+            return null;
         }
 
 
